@@ -6,7 +6,9 @@ export DB_PASS=password
 export DB_HOST=localhost
 
 ./dependencies.sh
-cd mysql && ./install.sh && cd ..
-cd php && ./install.sh && cd ..
-cd nginx && ./install.sh && cd ..
-cd wordpress && ./install.sh && cd ..
+
+./nginx.sh
+./mysql.sh
+./php.sh
+./phpmyadmin.sh
+./wordpress.sh

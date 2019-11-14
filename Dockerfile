@@ -2,7 +2,11 @@
 FROM debian:buster
 
 # Add config files
-ADD srcs/*.sh /
+ADD srcs/* /App/
+WORKDIR /App
 
-# Installing mysql
-RUN /install_mysql.sh
+# Permissions
+RUN chmod +x *.sh
+
+# Installing
+RUN ./install.sh
