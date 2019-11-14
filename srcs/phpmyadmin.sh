@@ -12,5 +12,12 @@ mv phpMyAdmin-* /usr/share/phpmyadmin
 mkdir -p /var/lib/phpmyadmin/tmp
 chown -R www-data:www-data /var/lib/phpmyadmin
 mkdir /etc/phpmyadmin/
-cp /usr/share/phpmyadmin/config.sample.inc.php  /usr/share/phpmyadmin/config.inc.php
 
+TEMPLATE=$(<phpmyadmin.inc.php)
+
+SECRET=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
+TEMPLATE="${TEMPLATE/\[\'blowfish_secret\'\] = \'\'/\[\'blowfish_secret\'\] = \'$SECRET\'}"
+
+echo "$TEMPLATE" > /usr/share/phpmyadmin/config.inc.php
+
+ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin

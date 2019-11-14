@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export DB_NAME=wordpress
-export DB_USER=user
+export DB_USER=root
 export DB_PASS=password
 export DB_HOST=localhost
 

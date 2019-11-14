@@ -10,3 +10,7 @@ RUN chmod +x *.sh
 
 # Installing
 RUN ./install.sh
+
+EXPOSE 80
+
+CMD [ "service", "nginx", "start" ]
