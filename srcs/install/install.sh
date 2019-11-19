@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 export DB_NAME=wordpress
-export DB_USER=root
-export DB_PASS=password
+export DB_USER=wordpress
+export DB_PASS="$(openssl rand -base64 16)"
 export DB_HOST=localhost
 
 export WORDPRESS_LOCATION=/var/www/html/wordpress

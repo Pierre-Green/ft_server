@@ -23,3 +23,8 @@ TEMPLATE="${TEMPLATE/PDB_HOST/$DB_HOST}"
 
 # Save wp-config.sh
 echo "$TEMPLATE" > $WORDPRESS_LOCATION/wp-config.php
+
+echo "CREATE DATABASE $DB_NAME;" | mysql
+echo "CREATE USER '$DB_USER'@'$DB_HOST' IDENTIFIED BY '$DB_PASS';" | mysql
+echo "GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'$DB_HOST';" | mysql
+echo "FLUSH PRIVILEGES;" | mysql
