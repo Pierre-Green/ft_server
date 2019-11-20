@@ -2,7 +2,7 @@
 
 export DB_NAME=wordpress
 export DB_USER=wordpress
-export DB_PASS="$(openssl rand -base64 16)"
+export DB_PASS=licorne
 export DB_HOST=localhost
 
 export WORDPRESS_LOCATION=/var/www/html/wordpress

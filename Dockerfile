@@ -10,8 +10,11 @@ RUN chmod +x *.sh
 RUN chmod +x **/*.sh
 
 # Installing
-# RUN ./install.sh
+RUN ./install.sh
 
+# Expose ports
 EXPOSE 80
+EXPOSE 443
 
-CMD [ "service", "nginx", "start" ]
+# Start nginx
+CMD [ "./start.sh" ]

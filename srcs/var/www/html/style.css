@@ -1,21 +1,56 @@
+html {
+	overflow: hidden;
+}
+
 body {
 	background-color: #020202;
 	width: 100vw;
 	height: 100vh;
-	padding: 5em;
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	background-color: #333333;
+	width: 30vw;
+	height: 30vh;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: space-between;
+	padding: 30px;
+}
+
+.title {
+	text-align: center;
+	color: #e5e5e5e5;
+	font-weight: 200;
+}
+
+.buttons {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
 	align-items: stretch;
 }
 
 .button {
-	margin: auto
+	flex: 1;
+	margin: 5% 0;
+	border-radius: 5px;
+	background-color: #666666;
+	border-color: #333333;
+	font-size: 100%;
+	text-transform: uppercase;
 }
 
 .wordpress {
-	background-color: #BB86fc;
+	color: #BB86fc;
 }
 
 .phpmyadmin {
-	background-color: #03dac6;
+	color: #03dac6;
 }
