@@ -7,6 +7,8 @@ DIFFIE_LOCATION=/etc/nginx/dhparam.pem
 echo "Installing nginx"
 apt install -y nginx
 
+echo "daemon off;" >> /etc/nginx/nginx.conf
+
 rm /etc/nginx/sites-enabled/default
 
 # Ssl
